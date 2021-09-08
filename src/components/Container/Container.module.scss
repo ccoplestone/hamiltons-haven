@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    margin: 0 auto;
+    max-width: $container-width;
+    padding: 0 5vw;
+
+    @include break(small-desktop) {
+        padding: 0 5rem;
+    }
+}

@@ -1,0 +1,100 @@
+//------------------------------
+// COLOURS
+//------------------------------
+
+$clr-white: #fff;
+$clr-black: #000;
+
+$clr-primary: #325D6A;
+$clr-primary-dark: #1F73A3;
+$clr-secondary: #0B2D38;
+$clr-secondary-dark: #0B2D38;
+$clr-secondary-light: #00A5A4;
+
+$clr-grey-xlight: #F6F2F2;
+$clr-grey-light: #c0c0c0;
+$clr-grey: #8F8F8F;
+$clr-grey-dark: #25262C;
+$clr-grey-xdark: #1C1C1E;
+
+$clr-light: $clr-grey-xlight;
+$clr-dark: $clr-grey-xdark;
+
+$clr-background: $clr-white;
+$clr-text: $clr-grey-dark;
+
+$clr-success: #ECF2D9;
+$clr-error: #DD4E4E;
+
+$clr-link: $clr-primary-dark;
+$clr-link-hover: $clr-secondary;
+
+//------------------------------
+// FONT FAMILIES & WEIGHTS
+//------------------------------
+
+$ff-body: 'Red Hat Display', sans-serif;
+$ff-title: 'Libre Baskerville', serif;
+
+$fw-thin: 300;
+$fw-body: 400;
+$fw-bold: 700;
+$fw-bolder: 900;
+
+//------------------------------
+// FONT SIZES & LINE HEIGHTS
+//------------------------------
+
+$fs-xs: 1.3rem;
+$fs-sm: 1.4rem;
+$fs-md: 1.7rem;
+$fs-lg: 2rem;
+$fs-xl: 3rem;
+
+$lh-tight: 1.5;
+$lh-body: 1.75;
+
+//------------------------------
+// LAYOUT
+//------------------------------
+
+$gutter: 3.2258%;
+$column: 5.376%;
+
+$container-width: 118rem;
+
+$banner-height-mobile: 6rem;
+$banner-height-desktop: 10rem;
+
+$br-sm: .5rem;
+$br-md: 1rem;
+$br-lg: 2rem;
+$br-xl: 10rem;
+
+//------------------------------
+// ANIMATION
+//------------------------------
+
+$easing: cubic-bezier(1, 0, .5, 1);
+
+//------------------------------
+// BREAK POINTS
+//------------------------------
+
+$bp-mobile: 400px;
+$bp-small-tablet: 500px;
+$bp-tablet: 650px;
+$bp-small-desktop: 850px;
+$bp-desktop: 1000px;
+$bp-large-desktop: 1150px;
+$bp-xlarge-desktop: 1600px;
+
+$breakpoints: (
+    mobile: (min: $bp-mobile, max: $bp-small-tablet),
+    small-tablet: (min: $bp-small-tablet, max: $bp-tablet),
+    tablet: (min: $bp-tablet, max: $bp-small-desktop),
+    small-desktop: (min: $bp-small-desktop, max: $bp-desktop),
+    desktop: (min: $bp-desktop, max: $bp-large-desktop),
+    large-desktop: (min: $bp-large-desktop, max: $bp-xlarge-desktop),
+    xlarge-desktop: (min: $bp-xlarge-desktop),
+);

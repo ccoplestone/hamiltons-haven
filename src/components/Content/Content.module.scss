@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    p:not(:last-child),
+    ul:not(:last-child) {
+        margin-bottom: 1.75em;
+    }
+
+    ul li {
+        list-style: disc;
+        margin-left: 2rem;
+    }
+}
+

@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-secondary;
+    border-radius: $br-lg;
+    box-shadow: 0 .5rem 1rem rgba($clr-secondary, 0.3);
+    color: $clr-white;
+    font-size: $fs-lg;
+    letter-spacing: .08em;
+    line-height: $lh-tight;
+    margin-bottom: 7rem;
+    padding: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    p:not(:last-child) {
+        margin-bottom: 1em;
+    }
+}

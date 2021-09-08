@@ -1,0 +1,43 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    @include hide-text;
+    backface-visibility: hidden;
+    background-color: $clr-white;
+    box-shadow: 0 .4rem 1rem rgba($clr-black, 0.25);
+    display: block;
+    height: 11rem;
+    transform: scale3d(1, 1, 1);
+    transform-origin: 0 50%;
+    transition: transform .2s;
+    width: 12rem;
+
+    @include break(desktop) {
+        transform: scale(2);
+        transform-origin: 0 0;
+    }
+
+    &::before {
+        background: image('header-logo.svg') no-repeat 0 50%;
+        background-size: contain;
+        bottom: 1rem;
+        content: '';
+        left: 1rem;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    &HasScrolled {
+        @include break(desktop) {
+            transform: translate3d(0, 8rem, 0) scale(1);
+        }
+    }
+
+    &HasNavigation {
+        @include break('<tablet') {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-primary-dark;
+    height: 41.5rem;
+    margin-top: .4em;
+}

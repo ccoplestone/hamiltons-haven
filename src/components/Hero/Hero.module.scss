@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-primary-dark;
+    background-position: 50% 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20rem;
+
+    &IsHome {
+        height: 34rem;
+    }
+
+    @include break(tablet) {
+        height: 24rem;
+
+        &IsHome {
+            height: 49rem;
+        }
+    }
+
+    @include break(desktop) {
+        height: 34rem;
+
+        &IsHome {
+            height: 79rem;
+        }
+    }
+}

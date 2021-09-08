@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    border-collapse: collapse;
+    font-size: $fs-sm;
+    margin-bottom: 4rem;
+    width: 100%;
+
+    &IsColumnless {
+        margin-top: -2.6rem;
+    }
+
+    @include break(small-tablet) {
+        font-size: $fs-md;
+        margin-bottom: 7rem;
+    }
+
+    @include break(small-desktop) {
+        margin-bottom: 0;
+    }
+
+    th {
+        line-height: 1;
+        padding: 0 1.5rem 1.5rem;
+        text-align: left;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            text-align: right;
+        }
+
+        @include break(small-desktop) {
+            padding-bottom: 3rem;
+        }
+    }
+
+    td {
+        border-bottom: .1rem $clr-grey-dark solid;
+        font-weight: $fw-bold;
+        padding: 2rem;
+
+        &:first-child {
+            font-weight: $fw-body;
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            text-align: right;
+        }
+    }
+}
+
+.asterisk {
+    color: $clr-grey;
+    display: block;
+    font-size: $fs-sm;
+    margin-top: 2rem;
+}

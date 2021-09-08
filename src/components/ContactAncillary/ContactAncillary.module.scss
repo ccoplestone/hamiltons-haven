@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-secondary;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $clr-white;
+    padding: 7rem 0;
+    text-align: center;
+
+    @include break(small-desktop) {
+        padding: 10rem 0;
+    }
+}
+
+.title {
+    font-family: $ff-title;
+    font-size: $fs-xl;
+    letter-spacing: -.01em;
+    line-height: 1;
+    margin-bottom: 5rem;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}

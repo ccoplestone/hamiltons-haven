@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    padding: 4rem 0;
+
+    @include break(tablet) {
+        padding: 10rem 0;
+    }
+
+    @include break(small-desktop) {
+        padding-bottom: 16rem;
+    }
+
+    &IsReverse {
+        background-color: $clr-secondary;
+        color: $clr-white;
+    }
+}
+
+.inner {
+    @include break(small-desktop) {
+        display: flex;
+    }
+
+    &IsReverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.title {
+    font-family: $ff-title;
+    font-size: $fs-xl;
+    letter-spacing: -.01em;
+    line-height: $lh-tight;
+    margin-bottom: .8em;
+}
+
+.figure {
+    margin: 3rem auto 0;
+    max-width: 40rem;
+
+    @include break(tablet) {
+        margin-top: 7rem;
+    }
+
+    @include break(small-desktop) {
+        margin: -14rem 0 0 12rem;
+        max-width: none;
+        min-width: 43rem;
+        width: 43rem;
+    }
+}
+
+.innerIsReverse .figure {
+    margin: -14rem 12rem 0 0;
+}
+
+.image {
+    display: block;
+    width: 100%;
+}

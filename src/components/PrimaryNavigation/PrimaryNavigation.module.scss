@@ -1,0 +1,51 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    display: none;
+
+    @include break(tablet) {
+        display: block;
+        margin-top: -.1rem;
+    }
+}
+
+.list {
+    align-items: center;
+    display: flex;
+    height: 6rem;
+
+    @include break(desktop) {
+        margin-top: 8rem;
+    }
+}
+
+.item {
+    margin-left: min(4vw, 5rem);
+
+    @include break(small-desktop) {
+        margin-left: min(6vw, 7rem);
+    }
+}
+
+.link {
+    color: $clr-white;
+    font-size: $fs-xs;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $clr-white;
+    }
+
+    &IsActive {
+        position: relative;
+
+        &::after {
+            background-color: $clr-white;
+            content: '';
+            height: .2rem;
+            position: absolute; left: 0; right: 0; bottom: -.8rem;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    @include hide-text;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 7rem;
+    margin: 0 auto;
+    width: 80%;
+
+    @include break(tablet) {
+        height: 10rem;
+    }
+}

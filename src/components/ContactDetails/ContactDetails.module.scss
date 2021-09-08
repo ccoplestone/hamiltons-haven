@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    white-space: nowrap;
+
+    @include break(small-desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    a {
+        color: $clr-white;
+
+        &:hover {
+            color: $clr-white;
+            position: relative;
+
+            &::after {
+                border-bottom: .1rem $clr-white solid;
+                bottom: -.2em;
+                content: '';
+                position: absolute; left: 0; right: 0;
+            }
+        }
+    }
+}
+
+.group {
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    @include break(small-desktop) {
+        display: flex;
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 0;
+            margin-right: 2rem;
+        }
+    }
+}
+
+.term {
+    &::after {
+        content: '\00a0';
+    }
+}
+
+.root:not(:last-child) .group:last-child {
+    margin-bottom: 3rem;
+}

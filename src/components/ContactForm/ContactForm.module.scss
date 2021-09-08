@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    margin-bottom: 7rem;
+
+    @include break(small-desktop) {
+        margin-bottom: 0;
+    }
+}
+
+.required {
+    color: $clr-grey;
+    display: block;
+    font-size: $fs-sm;
+    margin-top: -1rem;
+
+    i {
+        color: $clr-error;
+        font-style: normal;
+    }
+}
+
+.actions {
+    margin-top: 3rem;
+}
+
+.success {
+    background-color: $clr-success;
+    padding: 3rem;
+    text-align: center;
+
+    &Title {
+        display: block;
+        font-family: $ff-title;
+        font-size: $fs-lg;
+        font-weight: $fw-bold;
+        line-height: $lh-tight;
+        margin-bottom: 2rem;
+    }
+
+    &Desc {
+        display: block;
+    }
+
+    &Action {
+        display: flex;
+        justify-content: center;
+
+        > * {
+            width: auto;
+        }
+    }
+}

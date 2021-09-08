@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-grey-xdark;
+    color: $clr-white;
+    font-size: $fs-xs;
+    letter-spacing: .05em;
+    padding: 7rem 0;
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    border-top: .1rem $clr-grey-light solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+        border-bottom: .1rem $clr-grey-light solid;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 7rem;
+
+        @include break(small-desktop) {
+            margin-bottom: 16rem;
+        }
+    }
+}
+
+.item {
+    padding: 3rem 0;
+    width: 50%;
+
+    &:not(:last-child) {
+        border-bottom: .1rem $clr-grey-light solid;
+    }
+
+    @include break(tablet) {
+        width: 25%;
+    }
+}

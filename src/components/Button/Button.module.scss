@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-primary-dark;
+    border: .2rem $clr-primary-dark solid;
+    border-radius: $br-xl;
+    color: $clr-white;
+    cursor: pointer;
+    display: block;
+    font-family: $ff-body;
+    font-size: $fs-sm;
+    font-weight: $fw-bold;
+    height: 4.8rem;
+    letter-spacing: 0.02em;
+    line-height: 4.4rem;
+    padding: .1rem 2.5rem 0;
+    text-align: center;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: $clr-secondary;
+        border-color: $clr-secondary;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &[disabled] {
+        filter: grayscale(1);
+        opacity: .3;
+        pointer-events: none;
+    }
+
+    &Block {
+        width: 100%;
+    }
+
+    &Bordered {
+        background-color: transparent;
+        border: .2rem $clr-white solid;
+
+        &:hover {
+            background-color: $clr-white;
+            color: $clr-text;
+        }
+    }
+
+    &NewWindow {
+        &::before {
+            //background: image('external.svg') no-repeat 50%;
+            content: '';
+            height: 1.8rem;
+            position: absolute; right: 2rem; top: calc(50% - .9rem);
+            width: 1.8rem;
+        }
+
+        padding-right: 5.5rem;
+        position: relative;
+    }
+}

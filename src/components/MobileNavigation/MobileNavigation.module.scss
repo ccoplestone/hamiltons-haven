@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-secondary;
+    overflow: auto;
+    opacity: 0;
+    padding: 3rem;
+    pointer-events: none;
+    position: fixed; top: 7rem; bottom: 0; left: 0; right: 0;
+    z-index: 5;
+
+    &IsOpen {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    @include break(tablet) {
+        display: none;
+    }
+}
+
+.link {
+    align-items: center;
+    border-bottom: .1rem rgba($clr-white, .1) solid;
+    color: $clr-white;
+    display: flex;
+    font-size: $fs-sm;
+    height: 7rem;
+    justify-content: center;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $clr-white;
+    }
+
+    &IsActive {
+        border-bottom: .2rem $clr-primary solid;
+        font-weight: $fw-bold;
+    }
+}

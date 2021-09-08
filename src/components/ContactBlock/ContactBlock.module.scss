@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    background-color: $clr-secondary;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $clr-white;
+    margin-bottom: 7rem;
+    padding: 3.5rem;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.altActions a {
+    color: $clr-white;
+    font-weight: $fw-bold;
+    letter-spacing: .05em;
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $clr-white;
+
+
+        &::after {
+            border-bottom: .1rem $clr-white solid;
+            bottom: -.2em;
+            content: '';
+            position: absolute; left: 0; right: 0;
+        }
+    }
+}

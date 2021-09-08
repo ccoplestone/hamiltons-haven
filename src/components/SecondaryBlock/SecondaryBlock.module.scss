@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    &IsSpaced {
+        padding-bottom: 7rem;
+
+        @include break(small-desktop) {
+            padding-bottom: 16rem;
+        }
+    }
+
+    @include break(small-desktop) {
+        display: flex;
+    }
+}
+
+.content {
+    @include break(small-desktop) {
+        margin-right: 5rem;
+        min-width: 48%;
+        width: 48%;
+
+        &IsWide {
+            min-width: 58%;
+            width: 58%;
+        }
+    }
+
+    @include break(desktop) {
+        margin-right: 12rem;
+    }
+}
+
+.aside {
+    margin-top: -.4em;
+    width: 100%;
+}
+
+.figure {
+    margin: 7rem auto 0;
+    max-width: 40rem;
+    width: 100%;
+
+    @include break(small-desktop) {
+        margin: 0;
+        max-width: none;
+    }
+}
+
+.image {
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}

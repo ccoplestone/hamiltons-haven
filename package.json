@@ -1,0 +1,43 @@
+{
+  "name": "hamiltons-haven",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev -p 8080",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "serve": "next start",
+    "start": "yarn run dev",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.4",
+    "classnames": "^2.2.6",
+    "history": "^4.10.1",
+    "next": "^10.0.0",
+    "nwi-utility": "^0.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-react": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-squarezero": "^1.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "next-optimized-images": "^2.6.2",
+    "prettier": "^1.18.2",
+    "sass": "^1.32.5",
+    "webp-loader": "^0.6.0"
+  },
+  "resolutions": {
+    "eslint-scope": "3.7.1"
+  }
+}

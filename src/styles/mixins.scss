@@ -1,0 +1,115 @@
+/*
+ * IMAGE
+ *
+ * This simple function just defines an images folder, to keep things DRY-er when importing URLs,
+ * for background images, etc.
+ */
+
+@function image($url) {
+    @return url('/images/#{$url}');
+}
+
+/*
+ * HIDE-TEXT
+ *
+ * Hide the text in an element, but still allow it to be parsed (by screen readers, for example).
+ * Useful for creating accesible icons, etc. The vaniila version uses `overflow: hidden`, which can
+ * cause issues in some cases when the element has other overflowing children. In that case,
+ * `hide-text-legacy` can be used, but is not generally recommended as the large negative
+ * `text-indent` can lead to inefficient rendering in some browsers.
+ */
+
+ @mixin hide-text {
+    overflow: hidden;
+    text-align: left;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+@mixin hide-text-legacy {
+    text-align: left;
+    text-indent: -9999em;
+    white-space: nowrap;
+}
+
+/*
+ * ASSISTIVE
+ *
+ * Visually hide an element, but still allow its content to be parsed (by screen readers, for
+ * example). This is different to the `hide-text` mixin above, as it will hide the entire element,
+ * rather than just it's content.
+ */
+
+@mixin assistive {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: .1rem;
+    margin: -.1rem;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: .1rem;
+}
+
+/*
+ * BREAK
+ *
+ * Takes the breakpoints defined in variables.scss and creates a way to use a mixin to define them.
+ * The simplest syntax is to just use the breakpoint key:
+ * ```
+ * @include break(tablet) { ... }
+ * ```
+ * This will create a media query using the principles of mobile-first, i.e. the encased styles will
+ * only be applied at screen sizes larger than the defined break point. You can ensure styles are
+ * only applied at smaller screen sizes by adding the less than symbol beforehand:
+ * ```
+ * @include break('<tablet') { ... }
+ * ```
+ * Note that the key has also been wrapped in quotes to prevent a SCSS syntax error. You can also
+ * ensure styles are only applied between screen sizes that are a minimum of the defined break
+ * point, and a maximum of the next break point. For example:
+ * ```
+ * @include break('=tablet') { ... }
+ * ```
+ * will apply styles at screen sizes that are greater than the `tablet` break point, but less than
+ * the `small-desktop` break point.
+ *
+ * Although the two latter variants can be useful in rare situations, it is recommended that the
+ * default is used primarily to prevent confusion in what style is being applied at what break
+ * point.
+ */
+
+$breakpoints: (
+    mobile: (min: $bp-mobile, max: $bp-small-tablet),
+    small-tablet: (min: $bp-small-tablet, max: $bp-tablet),
+    tablet: (min: $bp-tablet, max: $bp-small-desktop),
+    small-desktop: (min: $bp-small-desktop, max: $bp-desktop),
+    desktop: (min: $bp-desktop, max: $bp-large-desktop),
+    large-desktop: (min: $bp-large-desktop, max: $bp-xlarge-desktop),
+    xlarge-desktop: (min: $bp-xlarge-desktop),
+);
+
+@mixin break($string) {
+    $key: str-slice($string, 2);
+    $break: map-get($breakpoints, $key);
+
+    @if str-index($string, '=') == 1 { // Equal to
+        @media (min-width: map-get($break, min)) and (max-width: (map-get($break, max) - 1px)) {
+            @content;
+        }
+    } @else if str-index($string, '<') == 1 { // Less than (desktop first)
+        @media (max-width: (map-get($break, min) - 1px)) {
+            @content;
+        }
+    } @else if str-index($string, '>') == 1 { // More than (mobile first)
+        @media (min-width: map-get($break, min)) {
+            @content;
+        }
+    } @else {
+        $break: map-get($breakpoints, $string); // Use $string instead of $key to get the breakpoint
+
+        @media (min-width: map-get($break, min)) {
+            @content;
+        }
+    }
+}

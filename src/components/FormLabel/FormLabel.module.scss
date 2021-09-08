@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    font-size: $fs-sm;
+    font-weight: $fw-bold;
+    display: block;
+    padding-bottom: .5rem;
+
+    &IsRequired::after {
+        color: $clr-error;
+        content: ' *';
+    }
+}

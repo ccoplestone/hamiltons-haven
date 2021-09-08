@@ -1,0 +1,16 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    color: $clr-secondary;
+    font-size: $fs-lg;
+    font-weight: $fw-bold;
+    letter-spacing: .08em;
+    padding: 7rem 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include break(small-desktop) {
+        padding: 10rem 0 16rem;
+    }
+}

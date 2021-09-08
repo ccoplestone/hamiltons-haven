@@ -1,0 +1,41 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    -webkit-appearance: none;
+    background-color: $clr-white;
+    font-size: $fs-md;
+    border: .1rem $clr-grey solid;
+    display: block;
+    font-family: $ff-body;
+    font-weight: $fw-body;
+    height: 4.4rem;
+    padding: 0 1rem;
+    width: 100%;
+
+    &:focus {
+        border-color: $clr-primary;
+        border-width: .2rem;
+        outline: none;
+        padding: 0 0.9rem;
+    }
+
+    &Error {
+        border-color: $clr-error;
+        border-width: .2rem;
+        padding: 0 0.9rem;
+    }
+}
+
+textarea {
+    &.root {
+        height: 18rem;
+        padding: 1rem 1.5rem;
+        resize: none;
+    }
+
+    &.root:focus,
+    &.rootError {
+        padding: 0.9rem 1.4rem;
+    }
+}

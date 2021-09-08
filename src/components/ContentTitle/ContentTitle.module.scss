@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+    font-family: $ff-title;
+    font-size: $fs-xl;
+    letter-spacing: -.01em;
+    line-height: 1;
+    padding: 4rem 0;
+    text-align: center;
+
+    @include break(tablet) {
+        padding: 9rem 0;
+    }
+}

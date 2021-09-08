@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'mixins';
+
+.root {
+
+}
+
+.def {
+    font-weight: $fw-bold;
+
+    &:not(:last-child) {
+        margin-bottom: 1.5em;
+    }
+}
